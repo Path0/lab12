@@ -51,6 +51,7 @@ int main(void)
 
   data = (int*)malloc(sizeof(int) * size);
   fillArray(size, data);
+  printLocations(data, size);
 /* to print values 
   for (i = 0; i < size; i++)
   {
@@ -113,13 +114,13 @@ void filterArray(int *array, int size)
   int index;
   for(index = 0; index < size; index++)
   {
-    if(array[index] % 9 == 0)
+    if(getValue(array, index) % 9 == 0)
     {
-      array[index] = array[index] % 10; // set the number to the first digit
+      setValue(array, index, getValue(array, index) %  10); // set the number to the first digit
     }
-    else if(array[index] % 10 == 0)
+    else
     {
-      array[index];
+      setValue(array, index, -1);
     }
   }
 }
