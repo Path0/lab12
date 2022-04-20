@@ -127,18 +127,15 @@ void filterArray(int *array, int size)
       setValue(array, index, -1);
     }
   }
-  
-  for(index = 0; index < size; index++)
-  {
-    printf("%d ", getValue(array, index));
-  }
-  printf("\n");
+
 }
 
 void printLocations (int *array, int size)
 {
   int index;//The location in the array that is being evaluated 
   int count;//The number possible locations
+
+  count = 0;
 
   printf("\nPossible locations:");
 
@@ -178,7 +175,6 @@ void findSounds(int *array, int size)
         setValue(array, index - getValue(array, index), 0);
       }
     }
-    
   }
 }
 
