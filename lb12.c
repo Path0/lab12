@@ -39,6 +39,8 @@ void printLocations (int*, int);
 void fillArray(int, int*);
 int getValue(int*, int);
 void setValue(int*, int, int);
+void findSounds(int*, int);
+
 
 int main(void)
 {
@@ -51,6 +53,8 @@ int main(void)
 
   data = (int*)malloc(sizeof(int) * size);
   fillArray(size, data);
+  filterArray(data, size);
+  findSounds(data, size);
   printLocations(data, size);
 /* to print values 
   for (i = 0; i < size; i++)
@@ -123,6 +127,7 @@ void filterArray(int *array, int size)
       setValue(array, index, -1);
     }
   }
+
 }
 
 void printLocations (int *array, int size)
@@ -145,6 +150,8 @@ void printLocations (int *array, int size)
   {
     printf(" None");
   }
+
+  printf("\n");
 }
 
 void findSounds(int *array, int size)
@@ -152,17 +159,21 @@ void findSounds(int *array, int size)
   int index;
   for(index = 0; index < size; index++)
   {
-    // checks for index above value
-    if(index + getValue(array, index) < size)
+    if(getValue(array, index) != -1)
     {
-      setValue(array, index + getValue(array, index), 0);
-    }
+      // checks for index above value
+      if(index + getValue(array, index) < size)
+      {
+        setValue(array, index + getValue(array, index), 0);
+      }
 
-    // checks for index below value
-    if(index - getValue(array, index) >= 0)
-    {
-      setValue(array, index - getValue(array, index), 0);
+      // checks for index below value
+      if(index - getValue(array, index) >= 0)
+      {
+        setValue(array, index - getValue(array, index), 0);
+      }
     }
+    
   }
 }
 
