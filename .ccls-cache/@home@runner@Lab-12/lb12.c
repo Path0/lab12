@@ -10,7 +10,9 @@
 *
 *  Program Description: This program asks for a seed and size value for an array, 
 *  making sure it is of correct parameters, and generates an array with random numbers 
-*  (0-999 inclusive). It then finds each element that is a multiple of 9, replaces the element with its ones value, and finds if the new element + or - the index is within the array size, and replaces the found index with 0
+*  (0-999 inclusive). It then finds each element that is a multiple of 9, replaces 
+*  the element with its ones value, and finds if the new element + or - the index 
+*  is within the array size, and replaces the found index with 0
 *
 ******+-**--------*--*-*-**---*---*--***-*-**-*****************************/
 
@@ -76,7 +78,6 @@ void getSeed()
     }
   } while (seed <= 0);
   srand(seed);
-
 }
 
 /*****+--**---*-*----*-****----------*-*-*-**-******************************
@@ -194,8 +195,8 @@ void filterArray(int *array, int size)
 ******+--**---*-*----*-****----------*-*-*-**-*****************************/
 void printLocations (int *array, int size)
 {
-  int index;//The location in the array that is being evaluated 
-  int count;//The number possible locations
+  int index; //The location in the array that is being evaluated 
+  int count; //The number possible locations
 
   count = 0;
 
