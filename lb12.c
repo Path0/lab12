@@ -134,7 +134,7 @@ void printLocations (int *array, int size)
 
   for (index = 0; index < size; index++)
   {
-    if (array[index] == 0)
+    if (getValue(array, index) == 0)
     {
       printf(" %d", index);
       count++;
