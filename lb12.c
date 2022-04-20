@@ -118,8 +118,8 @@ void filterArray(int array[], int size)
 
 void printLocations (int array[], int size)
 {
-  int index;
-  int count;
+  int index;//The location in the array that is being evaluated 
+  int count;//The number possible locations
 
   printf("\nPossible locations:");
 
@@ -130,5 +130,10 @@ void printLocations (int array[], int size)
       printf(" %d", index);
       count++;
     }
+  }
+
+  if (count == 0)
+  {
+    printf(" None");
   }
 }
