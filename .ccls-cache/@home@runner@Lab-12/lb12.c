@@ -8,7 +8,9 @@
 *  either modified or unmodified.  Neither have I provided access to my code 
 *  to another. The effort I am submitting is my own original work.
 *
-*  Program Description: This program asks for a seed and size value for an array, making sure it is of correct parameters, and generates an array with random numbers (0-999 inclusive). It then finds each element that is a multiple of 9, replaces the element with its ones value, and finds the where 
+*  Program Description: This program asks for a seed and size value for an array, 
+*  making sure it is of correct parameters, and generates an array with random numbers 
+*  (0-999 inclusive). It then finds each element that is a multiple of 9, replaces the element with its ones value, and finds if the new element + or - the index is within the array size, and replaces the found index with 0
 *
 ******+-**--------*--*-*-**---*---*--***-*-**-*****************************/
 
@@ -24,7 +26,6 @@ void fillArray(int*, int);
 int getValue(int*, int);
 void setValue(int*, int, int);
 void findSounds(int*, int);
-
 
 int main(void)
 {
@@ -155,7 +156,6 @@ void fillArray(int *array, int size)
 *  ones place. If it is not, sets the value to -1. 
 *
 ******+--**---*-*----*-****----------*-*-*-**-*****************************/
-
 void filterArray(int *array, int size)
 {
   
@@ -192,7 +192,6 @@ void filterArray(int *array, int size)
 *  then outputs that location in the array
 *
 ******+--**---*-*----*-****----------*-*-*-**-*****************************/
-
 void printLocations (int *array, int size)
 {
   int index;//The location in the array that is being evaluated 
@@ -236,7 +235,6 @@ void printLocations (int *array, int size)
 *  such indices exist.
 *
 ******+--**---*-*----*-****----------*-*-*-**-*****************************/
-
 void findSounds(int *array, int size)
 {
   int index; // index variable for array iterations
@@ -276,10 +274,9 @@ void findSounds(int *array, int size)
 *  and returns it as an integer.
 *
 ******+--**---*-*----*-****----------*-*-*-**-*****************************/
-
 int getValue(int *array, int index)
 {
-  return *(array + index); // basically return array[index]; but pointers
+  return * (array + index); // basically return array[index]; but pointers
 }
 
 /*****+--**---*-*----*-****----------*-*-*-**-******************************
@@ -299,8 +296,7 @@ int getValue(int *array, int index)
 *  specified.
 *
 ******+--**---*-*----*-****----------*-*-*-**-*****************************/
-
 void setValue(int *array, int index, int value)
 {
-  *(array + index) = value; // basically array[index] = value; but with pointers
+  * (array + index) = value; // basically array[index] = value; but with pointers
 }
